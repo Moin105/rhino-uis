@@ -1,0 +1,22 @@
+.details-reset > summary {
+  cursor: pointer;
+  list-style: none;
+}
+.details-reset > summary::-webkit-details-marker {
+  display: none;
+}
+.details-reset > summary::before {
+  display: none;
+}
+.details-reset > summary:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--color-brand-primary-light);
+}
+.details-reset > summary:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--color-brand-primary-light);
+}
+.details-reset > summary:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
+}/*# sourceMappingURL=Details.module.css.map */

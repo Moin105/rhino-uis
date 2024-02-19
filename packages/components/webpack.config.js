@@ -6,15 +6,12 @@
  * and a subset of the resulting config (plugins, module.rules, and resolve.extensions) are consumed by
  * `.storybook/main.js` to supplement Storybook's existing config.
  */
-
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
 const rules = [];
-
 // Process all SCSS modules which will be compiled inside the main JS bundle.
 const injectCssModulesInJS = {
   test: /\.scss$/,
@@ -32,7 +29,6 @@ const injectCssModulesInJS = {
     'sass-loader',
     'postcss-loader',
   ],
-  include: /\.module\.scss$/,
 };
 
 // Process all SCSS modules which will be compiled to an index.css
@@ -54,7 +50,6 @@ const extractCssModulesToCss = {
   ],
   include: /\.module\.scss$/,
 };
-
 const processGlobalCss = {
   test: /\.scss$/,
   use: [
@@ -65,7 +60,6 @@ const processGlobalCss = {
   ],
   exclude: /\.module\.scss$/,
 };
-
 const processFonts = {
   test: /\.(woff(2)?|otf|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
   use: [
@@ -78,7 +72,6 @@ const processFonts = {
     },
   ],
 };
-
 // When previewing or building storybook, global CSS is imported
 // via the storybook preview.js, so only modules need to be processed.
 // NOTE: this rule is merged with the rest of the storybook webpack config in
@@ -86,6 +79,7 @@ const processFonts = {
 if (process.env.IS_STORYBOOK) {
   rules.push(
     { ...injectCssModulesInJS },
+    { ...processFonts },
   );
 }
 
@@ -101,7 +95,6 @@ if (process.env.IS_PUBLISHING) {
     ],
   );
 }
-
 module.exports = {
   mode: process.env.NODE_ENV, // Should be set in the yarn script since there is no true ENV.
   // Files to be bundled

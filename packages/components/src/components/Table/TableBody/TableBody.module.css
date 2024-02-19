@@ -1,0 +1,8 @@
+.table-body.striped tr:nth-of-type(odd) th,
+.table-body.striped tr:nth-of-type(odd) td {
+  background-color: var(--table-row-striped-background, var(--INTERNAL_table-row-striped-background));
+}
+.table-body.hover tr:hover th,
+.table-body.hover tr:hover td {
+  background-color: var(--table-row-hover-background);
+}/*# sourceMappingURL=TableBody.module.css.map */

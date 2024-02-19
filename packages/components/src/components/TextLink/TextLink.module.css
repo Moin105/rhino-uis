@@ -1,0 +1,16 @@
+.text-link.primary {
+  text-decoration-color: var(--text-link-font-color-primary, var(--color-brand-primary-500));
+  color: var(--text-link-font-color-primary, var(--color-brand-primary-500));
+}
+.text-link.primary:hover {
+  text-decoration-color: var(--text-link-font-color-primary-hover, var(--color-brand-primary-600));
+  color: var(--text-link-font-color-primary-hover, var(--color-brand-primary-600));
+}
+.text-link.danger {
+  text-decoration-color: var(--text-link-font-color-danger, var(--color-brand-danger-base));
+  color: var(--text-link-font-color-danger, var(--color-brand-danger-base));
+}
+.text-link.danger:hover {
+  text-decoration-color: var(--text-link-font-color-danger-hover, var(--color-brand-danger-600));
+  color: var(--text-link-font-color-danger-hover, var(--color-brand-danger-600));
+}/*# sourceMappingURL=TextLink.module.css.map */

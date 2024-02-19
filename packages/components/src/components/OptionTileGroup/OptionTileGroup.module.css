@@ -1,0 +1,15 @@
+.option:focus {
+  outline: 0;
+  box-shadow: var(--option-tile-box-shadow-focus, var(--INTERNAL_form-control-box-shadow-focus));
+}
+.option:focus-within {
+  border-color: var(--color-brand-primary-500);
+}
+.option:focus-visible {
+  outline: 0;
+  box-shadow: var(--option-tile-box-shadow-focus, var(--INTERNAL_form-control-box-shadow-focus));
+}
+.option:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
+}/*# sourceMappingURL=OptionTileGroup.module.css.map */
